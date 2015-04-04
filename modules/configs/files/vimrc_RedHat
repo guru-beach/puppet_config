@@ -1,0 +1,12 @@
+syntax on
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set ruler
+set autoindent
+nmap <C-N> :set paste<CR>
+nmap <C-S-N> :set nopaste<CR>
+imap <C-N> <Esc>:set paste<CR>
+imap <C-S-N> <Esc>:set nopaste<CR>
+
+
