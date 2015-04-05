@@ -1,7 +1,11 @@
-
 # Source global definitions
 if [ -f /etc/bashrc ]; then
   . /etc/bashrc
+fi
+
+# Location specific aliases and functions
+if [ -f $HOME/.bashrc.local ]; then
+  . $HOME/.bashrc.local
 fi
 
 # Used when you want to sudo or screen/tmux and carry your SSH forwards
@@ -21,7 +25,7 @@ parse_git_branch() {
 gitc() {
   git branch &> /dev/null
   if [ $? -ne 0 ];then
-    echo "Not a Git branch, exiting"
+    echo "No Git branch here funny guy."
     return 1
   else
     JIRA=$(parse_git_branch | sed -e 's/.*\/\(.*\)$/\1/')
