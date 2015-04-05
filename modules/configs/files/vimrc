@@ -1,0 +1,15 @@
+syntax on
+filetype plugin indent on
+set ruler
+set autoindent
+let s:uname = system("uname")
+if s:uname == "Darwin\n"
+  nmap <F1> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+  imap <F1> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+endif
+if s:uname == "Linux\n"
+  nmap <C-N> :set paste<CR>i
+  imap <C-N> <Esc>:set paste<CR>i
+  nmap <C-B> :set nopaste<CR>
+  imap <C-B> <Esc>:set nopaste<CR>
+endif

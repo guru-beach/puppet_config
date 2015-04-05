@@ -1,12 +1,12 @@
-
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-  . /etc/bashrc
+# Location specific aliases and functions
+if [ -f $HOME/.bashrc.local ]; then
+  . $HOME/.bashrc.local
 fi
 
 # Used when you want to sudo or screen/tmux and carry your SSH forwards
-alias exportssh="set | grep SSH | sed "s/^/export /" > jakessh"
+alias exportssh='set | grep SSH | sed "s/^/export /" > ~/jakessh;chmod 600 ~/jakessh'
 alias ll='ls -latr'
+alias pup='puppet apply ~/.puppet/manifests/site.pp'
 
 complete -C aws_completer aws
 parse_git_branch() {
@@ -15,6 +15,18 @@ parse_git_branch() {
       echo ""
   else
       git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+  fi
+}
+
+gitc() {
+  git branch &> /dev/null
+  if [ $? -ne 0 ];then
+    echo "No Git branch here funny guy."
+    return 1
+  else
+    JIRA=$(parse_git_branch | sed -e 's/.*\/\(.*\)$/\1/')
+    TEXT=$@
+    git commit -a -m"$JIRA: $TEXT"
   fi
 }
 

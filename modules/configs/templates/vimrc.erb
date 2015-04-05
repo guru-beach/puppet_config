@@ -8,3 +8,9 @@ set autoindent
 nmap <F1> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
 imap <F1> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
 <% end %>
+<% if @osfamily == 'RedHat' %>
+nmap <C-N> :set paste<CR>i
+imap <C-N> <Esc>:set paste<CR>i
+nmap <C-B> :set nopaste<CR>
+imap <C-B> <Esc>:set nopaste<CR>
+<% end %>
