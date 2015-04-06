@@ -1,6 +1,6 @@
 # This class installs personal configuration files 
 
-class config ( $local_repo = undef ) {
+class configs ( $local_repo = undef ) {
 
   file { "${env_home}/.vimrc" :
     ensure  => present,
