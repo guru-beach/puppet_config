@@ -1,10 +1,5 @@
-# Location specific aliases and functions
-if [ -f $HOME/.bashrc.local ]; then
-  . $HOME/.bashrc.local
-fi
-
 # Used when you want to sudo or screen/tmux and carry your SSH forwards
-alias exportssh='set | grep SSH | sed "s/^/export /" > ~/jakessh;chmod 600 ~/jakessh'
+alias exportssh='set | grep SSH | sed "s/^/export /" > ~/ssh_env;chmod 600 ~/ssh_env'
 alias ll='ls -latr'
 alias pup='puppet apply ~/.puppet/manifests/site.pp'
 
