@@ -1,8 +1,21 @@
 set -o vi
 shopt -s histappend
-# Location specific aliases and functions
+export PROMPT_COMMAND="history -a"
+export PS1='\w: $(parse_git_branch)\n[\u@\[\e[32;40m\]\h\[\e[0m\]]'
+
+# aliases and functions
 if [ -f $HOME/.bashrc ]; then
   . $HOME/.bashrc
 fi
-export PROMPT_COMMAND="history -a"
-export PS1='\w: $(parse_git_branch)\n[\u@\[\e[32;40m\]\h\[\e[0m\]]'
+
+# These two are overrides for locations or OS specific settings
+# Location specific aliases and functions
+if [ -f $HOME/local_config/.bashrc ]; then
+  . $HOME/local_config/.bashrc
+fi
+
+# Location specific 
+if [ -f $HOME/local_config/.bash_profile ]; then
+  . $HOME/local_config/.bash_profile
+fi
+

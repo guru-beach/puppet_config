@@ -1,8 +1,11 @@
 syntax on
+" Almost all configuration options are done through plugins
 filetype plugin indent on
 set ruler
 set autoindent
 let s:uname = system("uname")
+
+" Helps with copy/paste when using autoindent
 if s:uname == "Darwin\n"
   nmap <F1> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
   imap <F1> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
