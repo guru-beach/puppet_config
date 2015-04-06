@@ -9,4 +9,4 @@
 # NOTE: FOR DEVELOPERS, THIS PATH MUST BE /etc/puppet/hiera.
 # # NOT THE DEFAULT VALUE --> /etc/puppet/hiera/%{environment}
 # # that is used by actual nodes
-:datadir: "/etc/puppet/hiera/"
+  :datadir: "/etc/puppet/hiera/"

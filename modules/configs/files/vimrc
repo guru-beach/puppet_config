@@ -1,8 +1,13 @@
 syntax on
 " Almost all configuration options are done through plugins
-filetype plugin indent on
 set ruler
 set autoindent
+" These are my defaults, override in the indent files if necessary
+set expandtab
+set tabstop=2
+set shiftwidth=2
+
+filetype plugin indent on
 let s:uname = system("uname")
 
 " Helps with copy/paste when using autoindent
