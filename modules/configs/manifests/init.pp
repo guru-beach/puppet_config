@@ -1,4 +1,4 @@
-# This class installs personal configuration files 
+# This class installs personal configsuration files 
 
 class configs ( $local_repo = undef ) {
 
@@ -6,7 +6,7 @@ class configs ( $local_repo = undef ) {
     ensure  => present,
     recurse => true,
     mode    => 0644,
-    source  => "puppet:///modules/config/vimrc/",
+    source  => "puppet:///modules/configs/vimrc/",
     owner   => "${env_user}",
   }
 
@@ -17,7 +17,7 @@ class configs ( $local_repo = undef ) {
     ensure  => directory,
     recurse => true,
     mode    => 0644,
-    source  => "puppet:///modules/config/vim/",
+    source  => "puppet:///modules/configs/vim/",
     owner   => "${env_user}",
   }
 
@@ -35,21 +35,21 @@ class configs ( $local_repo = undef ) {
 
   file {"${env_home}/.bash_profile" :
     ensure  => present,
-    source  => "puppet:///modules/config/bash_profile",
+    source  => "puppet:///modules/configs/bash_profile",
     owner   => "${env_user}",
     mode    => 0644,
   }
 
   file {"${env_home}/.bashrc" :
     ensure  => present,
-    source  => "puppet:///modules/config/bashrc",
+    source  => "puppet:///modules/configs/bashrc",
     owner   => "${env_user}",
     mode    => 0644,
   }
 
   file {"${env_home}/.gitignore_global" :
     ensure  => present,
-    source  => "puppet:///modules/config/gitignore_global",
+    source  => "puppet:///modules/configs/gitignore_global",
     owner   => "${env_user}",
     mode    => 0644,
   }
