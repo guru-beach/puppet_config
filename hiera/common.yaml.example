@@ -1,0 +1,4 @@
+---
+# Place to put hiera variables
+# This probably won't do what you want...but it's an example :)
+configs::local_repo: 'https://github.com/guru-beach/puppet_config.git'
