@@ -5,6 +5,7 @@ For a basic system, having a hierarchy is probably overkill, but it's here to al
 Since common.yaml is the only file actually defined in the hierarchy, create it and fill it with stuff.   
 
 e.g.
+
 ```
 ---
 # This probably won't do what you want...
