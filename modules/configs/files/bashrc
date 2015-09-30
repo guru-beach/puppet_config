@@ -2,6 +2,8 @@
 alias exportssh='set | grep SSH | sed "s/^/export /" > ~/ssh_env;chmod 600 ~/ssh_env'
 alias ll='ls -latr'
 alias pup='puppet apply ~/.puppet/manifests/site.pp'
+# When your formatting doesn't agree with something else
+alias vimno='vim -u NONE'
 
 complete -C aws_completer aws
 parse_git_branch() {
